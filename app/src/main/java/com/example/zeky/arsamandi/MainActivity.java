@@ -11,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //La hermosa de la inma no veas como eructa parece un orco
+    
 
 }
