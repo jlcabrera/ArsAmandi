@@ -1,6 +1,8 @@
 package com.example.zeky.arsamandi;
 
+import android.graphics.Color;
 import android.support.v4.widget.DrawerLayout;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 
 
 public class ActividadPrincipal extends AppCompatActivity implements AdapterView.OnItemClickListener {
@@ -22,12 +25,15 @@ public class ActividadPrincipal extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarPrincipal);
+        toolbar.setTitleTextColor(Color.BLACK);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getSupportActionBar().setHomeButtonEnabled(true);
 
         this.optionList = (ListView)findViewById(R.id.optionItems);
         this.mDrawer = (DrawerLayout)findViewById(R.id.drawerLayout);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_black_18dp);
 
         this.optionList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, options));
         this.optionList.setOnItemClickListener(this);

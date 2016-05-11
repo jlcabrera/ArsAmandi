@@ -1,8 +1,11 @@
 package com.example.zeky.arsamandi;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         Button initSession = (Button)findViewById(R.id.bIniciarSesion);
         if(initSession != null) {
