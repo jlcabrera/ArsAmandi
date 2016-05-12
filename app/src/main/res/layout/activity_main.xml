@@ -1,71 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.zeky.arsamandi.MainActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.zeky.arsamandi.MainActivity">
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <RelativeLayout
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarMain"
+            android:background="@drawable/logo_ars_amandi"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_width="match_parent"
+            android:titleTextColor="@android:color/black"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin">
-            <Button
+            android:layout_height="wrap_content">
+            <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Iniciar sesión"
-                android:id="@+id/bIniciarSesion"
-                android:layout_below="@+id/etPassword"
-                android:layout_marginTop="78dp"
-                android:layout_alignRight="@+id/etPassword"
-                android:layout_alignEnd="@+id/etPassword"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Iniciar sesión"
+                    android:id="@+id/bIniciarSesion"
+                    android:layout_below="@+id/etPassword"
+                    android:layout_marginTop="78dp"
+                    android:layout_alignRight="@+id/etPassword"
+                    android:layout_alignEnd="@+id/etPassword"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/etUsuario"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="70dp"
-                android:hint="Usuario"
-                android:textAlignment="center"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etUsuario"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="70dp"
+                    android:hint="Usuario"
+                    android:textAlignment="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/etPassword"
-                android:layout_below="@+id/etUsuario"
-                android:layout_marginTop="34dp"
-                android:hint="Contraseña"
-                android:textAlignment="center"
-                android:layout_alignRight="@+id/etUsuario"
-                android:layout_alignEnd="@+id/etUsuario"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/etPassword"
+                    android:layout_below="@+id/etUsuario"
+                    android:layout_marginTop="34dp"
+                    android:hint="Contraseña"
+                    android:textAlignment="center"
+                    android:layout_alignRight="@+id/etUsuario"
+                    android:layout_alignEnd="@+id/etUsuario"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Registrarse"
-                android:id="@+id/bRegistro"
-                android:layout_below="@+id/bIniciarSesion"
-                android:layout_marginTop="39dp"
-                android:layout_alignRight="@+id/bIniciarSesion"
-                android:layout_alignEnd="@+id/bIniciarSesion"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
-        </RelativeLayout>
-    </ScrollView>
-</RelativeLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Registrarse"
+                    android:id="@+id/bRegistro"
+                    android:layout_below="@+id/bIniciarSesion"
+                    android:layout_marginTop="39dp"
+                    android:layout_alignRight="@+id/bIniciarSesion"
+                    android:layout_alignEnd="@+id/bIniciarSesion"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

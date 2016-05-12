@@ -24,7 +24,9 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarMain);
+        toolbar.setTitleTextColor(Color.BLACK);
+        setSupportActionBar(toolbar);
 
 
         Button initSession = (Button)findViewById(R.id.bIniciarSesion);
@@ -58,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         }else if(this.user.getPass().equals(((EditText)findViewById(R.id.etPassword)).getText().toString())){
             //nuevo intent
             Intent i = new Intent(this, ActividadPrincipal.class);
+            i.putExtra("usuario", this.user.getUsuario());
+            i.putExtra("grupo", this.user.getGrupo());
+            i.putExtra("pass", this.user.getPass());
             startActivity(i);
         }else{
             Toast.makeText(this, "La contraseña es errónea", Toast.LENGTH_LONG).show();
