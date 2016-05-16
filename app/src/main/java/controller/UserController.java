@@ -1,6 +1,7 @@
 package controller;
 
 import android.os.Environment;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -74,7 +75,7 @@ public class UserController {
         try {
             u = this.users.get(user);
         }catch(NullPointerException e){
-
+            Log.e("error", "el usuario no existe");
         }
         return u;
     }

@@ -16,7 +16,11 @@ import android.view.View;
 import android.widget.TextView;
 
 
+import java.util.ArrayList;
+
+import Model.Mensaje;
 import Model.Usuario;
+import fragments.MensajesFragment;
 import fragments.MiPerfilFragment;
 
 
@@ -32,11 +36,7 @@ public class ActividadPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_principal);
 
-        final String userName = getIntent().getExtras().getString("usuario");
-        String pass = getIntent().getExtras().getString("pass");
-        final String groupName = getIntent().getExtras().getString("grupo");
-
-        this.user = new Usuario(userName, pass, groupName);
+        this.user = (Usuario) getIntent().getExtras().get("usuario");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarPrincipal);
         toolbar.setTitleTextColor(Color.BLACK);
@@ -48,7 +48,7 @@ public class ActividadPrincipal extends AppCompatActivity {
         this.mDrawer = (DrawerLayout) findViewById(R.id.drawerLayout);
         this.navview = (NavigationView) findViewById(R.id.navview);
         View headerView = this.navview.inflateHeaderView(R.layout.header_navview);
-        ((TextView)headerView.findViewById(R.id.tvUserNameHeader)).setText(userName);
+        ((TextView)headerView.findViewById(R.id.tvUserNameHeader)).setText(this.user.getUsuario());
         this.navview.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -58,6 +58,11 @@ public class ActividadPrincipal extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.miPerfil:
                         f = new MiPerfilFragment();
+                        f.setArguments(getIntent().getExtras());
+                        fragmentTrasaction = true;
+                        break;
+                    case R.id.mensajes:
+                        f = new MensajesFragment();
                         f.setArguments(getIntent().getExtras());
                         fragmentTrasaction = true;
                         break;

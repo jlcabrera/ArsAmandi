@@ -1,6 +1,8 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario implements Serializable{
 
@@ -8,15 +10,17 @@ public class Usuario implements Serializable{
     private String usuario;
     private String pass;
     private String grupo;
+    private ArrayList<Mensaje> mensajes;
 
     public Usuario(){
 
     }
 
-    public Usuario(String name, String password, String grupo){
+    public Usuario(String name, String password, String grupo, ArrayList<Mensaje> mensajes){
         this.usuario = name;
         this.pass = password;
         this.grupo = grupo;
+        this.mensajes = mensajes;
     }
 
     //Metodos getter y setter para tratar los datos del usuario
@@ -42,5 +46,13 @@ public class Usuario implements Serializable{
 
     public void setGrupo(String grupo){
         this.grupo = grupo;
+    }
+
+    public ArrayList<Mensaje> getMensajes(){
+        return this.mensajes;
+    }
+
+    public void setMensajes(ArrayList<Mensaje> mensajes){
+        this.mensajes = mensajes;
     }
 }

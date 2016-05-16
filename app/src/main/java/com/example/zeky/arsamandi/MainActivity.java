@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 import Model.Usuario;
 import controller.UserController;
 
@@ -60,9 +62,7 @@ public class MainActivity extends AppCompatActivity {
         }else if(this.user.getPass().equals(((EditText)findViewById(R.id.etPassword)).getText().toString())){
             //nuevo intent
             Intent i = new Intent(this, ActividadPrincipal.class);
-            i.putExtra("usuario", this.user.getUsuario());
-            i.putExtra("grupo", this.user.getGrupo());
-            i.putExtra("pass", this.user.getPass());
+            i.putExtra("usuario", this.user);
             startActivity(i);
         }else{
             Toast.makeText(this, "La contraseña es errónea", Toast.LENGTH_LONG).show();

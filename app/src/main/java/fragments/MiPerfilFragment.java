@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.zeky.arsamandi.R;
 
+import Model.Usuario;
+
 /**
  * Created by Zeky on 12/5/16.
  */
@@ -29,8 +31,10 @@ public class MiPerfilFragment extends Fragment {
         this.nombre = (TextView)v.findViewById(R.id.tvUserName);
         this.grupo = (TextView)v.findViewById(R.id.tvGroupName);
 
-        this.nombre.setText("Nombre de usuario: " + this.getArguments().getString("usuario"));
-        this.grupo.setText("Perteneces al grupo: " + this.getArguments().getString("grupo"));
+        Usuario u = (Usuario)getArguments().get("usuario");
+
+        this.nombre.setText("Nombre de usuario: " + u.getUsuario());
+        this.grupo.setText("Perteneces al grupo: " + u.getGrupo());
         return v;
     }
 
