@@ -48,9 +48,17 @@
             android:name=".NewMessage"
             android:label="Redactar"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustResize"
-            >
-
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".DetalleMensaje"
+            android:label="@string/title_activity_detalle_mensaje"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".DetallesEventos"
+            android:label="@string/title_activity_detalles_eventos"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

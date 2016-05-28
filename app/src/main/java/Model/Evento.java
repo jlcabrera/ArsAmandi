@@ -1,28 +1,39 @@
 package Model;
 
+import android.graphics.Bitmap;
+
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * Created by Zeky on 11/5/16.
  */
-public class Evento {
+public class Evento implements Serializable {
 
     //Atributos de la clase
     private String name;
     private String groupDestiny;
-    private int price;
+
     private String location;
+    private int recursoImagen;
+    private String dia;
+    private String hora;
 
     public Evento(){
         this.name = "Evento de ejemplo";
         this.groupDestiny = "grupo de ejemplo";
-        this.price = 0;
+
         this.location = "lugar del evento";
     }
 
-    public Evento(String name, String group, int price, String location){
+    public Evento(String name, String group, String location, int recursoImagen, String dia, String hora){
         this.name = name;
         this.groupDestiny = group;
-        this.price = price;
+
         this.location = location;
+        this.recursoImagen = recursoImagen;
+        this.dia = dia;
+        this.hora = hora;
     }
 
 
@@ -43,14 +54,6 @@ public class Evento {
         this.groupDestiny = grupo;
     }
 
-    public int getPrice(){
-        return this.price;
-    }
-
-    public void setPrice(int price){
-        this.price = price;
-    }
-
     public String getLocation(){
         return this.location;
     }
@@ -59,4 +62,27 @@ public class Evento {
         this.location = location;
     }
 
+    public void setRecursoImagen(int imagen){
+        this.recursoImagen = imagen;
+    }
+
+    public int getRecursoImagen(){
+        return recursoImagen;
+    }
+
+    public String getDia(){
+        return dia;
+    }
+
+    public void setDia(String dia){
+        this.dia = dia;
+    }
+
+    public String getHora(){
+        return this.hora;
+    }
+
+    public void setHora(String hora){
+        this.hora = hora;
+    }
 }
